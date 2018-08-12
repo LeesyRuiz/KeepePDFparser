@@ -26,13 +26,12 @@ box = Streak::Box.create(pipeline_key, { :name => 'OMG' })
 puts box.key
 
 
-
-# BoxID = box['key']
+ 
 
 
 #what will nameing convenction be 
 
-#get the box id.... from streak 
+ 
 # "boxKey": "agxzfm1haWxmb29nYWVyLAsSDE9yZ2FuaXphdGlvbiIJa2VlcGUuY29tDAsSBENhc2UYgICAwrCznwoM",
 
 # updated customer field s

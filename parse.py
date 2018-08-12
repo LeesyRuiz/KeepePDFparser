@@ -16,7 +16,17 @@ class Address:
         print('Address:' + self.address +  ' City: ' +  self.city)
 
 
- 
+class Tenant:
+    def __init__(self, name, phone, email):
+        self.name = name
+        self.phone = phone
+        self.email = email
+
+    def show(self):
+
+        print('Tenant Name:' + self.name +  ' Tenant Phone: ' +  self.phone + 'Tenant Email' + self.email)
+
+
 
 
 def convert_pdf_to_txt(path):
@@ -43,15 +53,20 @@ def convert_pdf_to_txt(path):
     return text
 
 
-result = convert_pdf_to_txt('/Users/lisyruiz/Documents/KeepePython/appfolio_WO/demo.pdf')
+result = convert_pdf_to_txt('/Users/lisyruiz/Documents/KeepePDFparser/appfolio_WO/demo.pdf')
 
-adr = Address(result[35], result[36])
-adr.show()
+address = Address(result[35], result[36])
 
+tenant_info = Tenant(result[44], result[46], result[48])
+
+
+address.show()
+tenant_info.show()
 
 with open('data.yml', 'w') as outfile:
-    yaml.dump(adr, outfile)
+    yaml.dump(tenant_info, outfile)
+    yaml.dump(address, outfile)
 
-#print(result)
+# print(result)
 
  
