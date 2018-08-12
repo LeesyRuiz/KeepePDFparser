@@ -1,10 +1,8 @@
 require 'streak-ruby'
-
-#open yaml file
-
-
-
-
+require 'yaml'
+ 
+x = YAML.load_file('/Users/lisyruiz/Documents/KeepePDFparser/data.yml')
+puts x.inspect
 
 
 
@@ -14,8 +12,11 @@ require 'streak-ruby'
 
 
 
-Streak.api_key = '95bf522aaa6348298d7cef4cc9571628'
-pipeline_key = 'agxzfm1haWxmb29nYWVyMAsSDE9yZ2FuaXphdGlvbiIJa2VlcGUuY29tDAsSCFdvcmtmbG93GICAgMCInYAKDA'
+
+
+
+# Streak.api_key = '95bf522aaa6348298d7cef4cc9571628'
+# pipeline_key = 'agxzfm1haWxmb29nYWVyMAsSDE9yZ2FuaXphdGlvbiIJa2VlcGUuY29tDAsSCFdvcmtmbG93GICAgMCInYAKDA'
 
 
 
@@ -23,7 +24,7 @@ pipeline_key = 'agxzfm1haWxmb29nYWVyMAsSDE9yZ2FuaXphdGlvbiIJa2VlcGUuY29tDAsSCFdv
 
 
 
-Streak::Box.create(pipeline_key, { :name => 'OMG' })
+# Streak::Box.create(pipeline_key, { :name => 'OMG' })
 
 
 #what will nameing convenction be 
