@@ -6,26 +6,45 @@ from cStringIO import StringIO
 import re
 import yaml
 
-class Address:
-    def __init__(self, address, city):
-        self.address = address
-        self.city = city
+# class Address:
+#     def __init__(self, address, city):
+#         self.address = address
+#         self.city = city
 
-    def show(self):
+#     def show(self):
 
-        print('Address:' + self.address +  ' City: ' +  self.city)
+#         print('Address:' + self.address +  ' City: ' +  self.city)
 
 
-class Tenant:
-    def __init__(self, name, phone, email):
-        self.name = name
-        self.phone = phone
-        self.email = email
+# class Tenant:
+#     def __init__(self, name, phone, email):
+#         self.name = name
+#         self.phone = phone
+#         self.email = email
 
-    def show(self):
+#     def show(self):
 
-        print('Tenant Name:' + self.name +  ' Tenant Phone: ' +  self.phone + 'Tenant Email' + self.email)
+#         print('Tenant Name : ' + self.name +  ' Tenant Phone : ' +  self.phone + ' Tenant Email : ' + self.email)
 
+# class TenantTwo:
+#     def __init__(self, name, phone, email):
+#         self.name = name
+#         self.phone = phone
+#         self.email = email
+
+#     def show(self):
+
+#         print('Tenant 2 Name : ' + self.name +  ' Tenant 2 Phone : ' +  self.phone + ' Tenant Email : ' + self.email)
+
+# class TenantThree:
+#     def __init__(self, name, phone, email):
+#         self.name = name
+#         self.phone = phone
+#         self.email = email
+
+#     def show(self):
+
+#         print('Tenant Name : ' + self.name +  ' Tenant Phone : ' +  self.phone + ' Tenant Email : ' + self.email)
 
 
 
@@ -53,20 +72,28 @@ def convert_pdf_to_txt(path):
     return text
 
 
-result = convert_pdf_to_txt('/Users/lisyruiz/Documents/KeepePDFparser/appfolio_WO/demo.pdf')
+result = convert_pdf_to_txt('/Users/lisyruiz/Documents/KeepePDFparser/appfolio_WO/civitas_appfolio.pdf')
 
-address = Address(result[35], result[36])
+# address = Address(result[35], result[36])
+# tenant_info = Tenant(result[44], result[46], result[48])
+# tenant_2_info = TenantTwo(result[44], result[46], result[48])
+# tenant_3_info = Tenant(result[44], result[46], result[48])
+ 
+# address.show()
+# tenant_info.show()
 
-tenant_info = Tenant(result[44], result[46], result[48])
+# with open('data.yml', 'w') as outfile:
+#     yaml.dump(tenant_info, outfile)
+#     yaml.dump(address, outfile)
 
-
-address.show()
-tenant_info.show()
-
-with open('data.yml', 'w') as outfile:
-    yaml.dump(tenant_info, outfile)
-    yaml.dump(address, outfile)
+ 
 
 # print(result)
 
+for entry in range(len(result)):
+    str = result[entry]
+    match = re.match(r'\d+-\d', str) 
+ 
+    if match:
+        print 'found', match.group()  
  
